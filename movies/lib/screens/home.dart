@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     //global variables.
 
     final moviesProvider = Provider.of<MoviesProvider>(context);
-    final appProvider = Provider.of<AppProvider>(context, listen: false);
+    final appProvider = Provider.of<AppProvider>(context);
 
     return Scaffold(
         appBar: AppBar(

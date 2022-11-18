@@ -72,7 +72,7 @@ class MoviesProvider extends ChangeNotifier {
     return castingResponse.cast;
   }
 
-  Future<List<Movie>> searchMovie(String query) async {
+  Future<List<Movie>> searchMovie({String query = ""}) async {
     if (mapSearchMovies.containsKey(query)) return mapSearchMovies[query]!;
 
     final url = Uri.https(_baseUrl, "3/search/movie", {
@@ -92,9 +92,10 @@ class MoviesProvider extends ChangeNotifier {
   }
 
   void getSuggestionByQuery(String searchTerm) {
+    if (searchTerm.isEmpty) return;
     debouncer.value = "";
     debouncer.onValue = (value) async {
-      final results = await searchMovie(searchTerm);
+      final results = await searchMovie(query: searchTerm);
       _streamController.add(results);
     };
 
