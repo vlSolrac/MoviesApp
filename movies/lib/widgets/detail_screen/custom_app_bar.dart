@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movies/theme/colors_theme.dart';
 
 import '../../theme/app_theme.dart';
 
@@ -18,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: ColorsTheme.primary,
+      backgroundColor: AppTheme.primary,
       expandedHeight: size.height * 0.3,
       floating: false,
       pinned: true,

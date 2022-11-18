@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
-import 'package:http/http.dart' as http;
 import 'package:movies/helpers/debouncer.dart';
+
 import 'package:movies/models/models.dart';
+import 'package:http/http.dart' as http;
 
 class MoviesProvider extends ChangeNotifier {
   final String _baseUrl = "api.themoviedb.org";
@@ -58,6 +58,8 @@ class MoviesProvider extends ChangeNotifier {
   }
 
   Future<List<Cast>> getCatingMovie(int idMovie) async {
+    // TODO: pasarlo al casting Provider y hcerlo de ontra manera.
+
     if (movieCast.containsKey(idMovie)) return movieCast[idMovie]!;
 
     final response = await getJsonData(endpoint: "3/movie/$idMovie/credits");

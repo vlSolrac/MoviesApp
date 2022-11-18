@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:movies/theme/themes.dart';
 
 class AppTheme {
+  static Color primary = Colors.deepPurple;
+  static Color? second = Colors.deepPurple[700];
+
   static ThemeData ligthTheme = ThemeData.light().copyWith(
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
-      color: ColorsTheme.primary,
+      color: primary,
       elevation: 5,
       centerTitle: true,
     ),
@@ -14,7 +16,7 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: Colors.black,
     appBarTheme: AppBarTheme(
-      color: ColorsTheme.primary,
+      color: primary,
       elevation: 5,
       centerTitle: true,
     ),
